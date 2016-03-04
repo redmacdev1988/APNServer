@@ -172,61 +172,28 @@ $(function() {
 
 	$('#send-custom-button').click(function() {
 
-			var payLoadText = $('#customPayloadTextArea').val();
-			var alertText = $('#customAlertTextArea').val();
-			//console.log('client.js: uSER ENTERED (' + payLoadText + ") INTO THE TEXT AREA");
-
-		    $.ajax({
-		        type: 	'POST',
-		        url: 	window.gURL + "/sendCustomNotification",
-
-						data:
-						{
-						   "customPayload"				: payLoadText,
-							 "customAlert"					: alertText
-						},
-						success: function(msg) {
-                console.log('client.js - button click success, with msg: ' + msg);
-            }
-		    });
-		});
-
-	$('#send-insight-button').click(function() {
+		var payLoadText = $('#customPayloadTextArea').val();
+		var alertText 	= $('#customAlertTextArea').val();
+			
 	    $.ajax({
 	        type: 	'POST',
-	        url: 	window.gURL + "/sendInsightNotification",
+	        url: 	window.gURL + "/sendcustomnotification",
 
-					data:
-					{
-					   "key1"				: "data content here",
-						 "key2" 			: "haha"
-					},
-					success: function(msg) {
-            console.log('client.js - button click success, with msg: ' + msg);
-        }
-	    });
-	});
-
-	$('#send-portfolio-button').click(function() {
-	    $.ajax({
-	        type: 	'POST',
-	        url: 	window.gURL + "/sendPortfolioNotification",
-
-					data:
-					{
-					   "key1"				: "data content here",
-						 "key2" 			: "haha"
-					},
-					success: function(msg) {
-            console.log('client.js - portfolio button click success, with msg: ' + msg);
-        }
+			data:
+			{
+			    "customPayload"				: payLoadText,
+				"customAlert"					: alertText
+			},
+			success: function(msg) {
+            	console.log('client.js - button click success, with msg: ' + msg);
+        	}
 	    });
 	});
 
 	$('#send-healthcheck-button').click(function() {
 	    $.ajax({
 	        type: 	'POST',
-	        url: 	window.gURL + "/sendHealthCheckNotification",
+	        url: 	window.gURL + "/sendhealthchecknotification",
 
 					data:
 					{

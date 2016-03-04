@@ -55,6 +55,7 @@
         </div> <!-- column -->
       </div> <!-- row -->
 
+
       <div class="row">
 
           <div class="col-md-12">
@@ -94,73 +95,80 @@
                 </div>
             </div>
           </div>
+      </div> <!-- row -->
+
+
+
+
+<div class="row">
+  <div class="col-md-12">
+
 
           <div class="col-md-6">
-              <div class="panel panel-success">
 
-                 <div class="panel-heading">
-                     <h3 class="panel-title">Send Portfolio Notification</h3>
-                 </div>
+            <div class="panel panel-warning">
 
-                 <div class="panel-body">
+              <div class="panel-heading">
+                <h3 class="panel-title">Example Portfolio Payload</h3>
+              </div>
 
-                   <div class="portfolioContent">
+               <div class="panel-body">
+               <div class="dataTypeContent">
 
+                  <p>
+                    Make sure your portfolio date (i.e 2013-10-29) is consistent. The apple watch app will append your portfolios according to date. 
+
+                    If you send a notification with a new date, then it will erase all previous portfolios on that date, and start appending according to your new date.
+                  </p>
                        <input type="button" class="btn btn-default" data-toggle="collapse"
                        data-target="#viewPortfolioData" value="View Payload">
                        <div id="viewPortfolioData" class="collapse">
                            <pre><code>
 {
-    "parameters" : "[[{\"type\":\"portfolio\",\"ptfl\":\"****50\",\"perf\":100.1235123,\"ccy\":\"USD\",\"aum\":97909023,\"chart_w\":[100.1235123,0,0,0,0],\"asof\":\"2013-10-29\",\"job\":\"DE\"}]]",
-    "aps":{
-        "alert": {
-            "body": "Your Portfolio Data is available.",
-            "title": "Portfolio"
-        }
-    }
+    "body": "Your Portfolio Data is available.",
+    "title": "Portfolio"
+}
+
+{
+"parameters" : "[[{\"type\":\"portfolio\",\"ptfl\":\"****50\",\"perf\":100.1235123,\"ccy\":\"USD\",\"aum\":97909023,\"chart_w\":[100.1235123,0,0,0,0],\"asof\":\"2013-10-29\",\"job\":\"DE\"}]]"
 }
                            </code></pre>
-                       </div> <!-- viewPortfolioData -->
-                   </div> <!-- portfolioContent -->
+                       </div> <!-- viewHealthCheckData -->
+                   </div> <!-- healthCheckContent -->
 
-                 </div> <!-- panel body -->
+                   </div> <!-- panel body -->
 
-                 <div class="panel-footer clearfix">
-                   <div class="pull-right">
-                       <button class="btn btn-primary" id='send-portfolio-button'>Send</button>
-                   </div>
-                 </div> <!-- panel footer -->
+            </div>
 
-
-             </div> <!-- panel -->
-          </div> <!-- column 6 -->
-
+          </div>
 
 
           <div class="col-md-6">
               <div class="panel panel-warning">
 
                  <div class="panel-heading">
-                     <h3 class="panel-title">Send Health Check Notification</h3>
+                     <h3 class="panel-title">Example Health Check Payload</h3>
                  </div>
 
 
                  <div class="panel-body">
 
-                   <div class="healthCheckContent">
+                   <div class="dataTypeContent">
 
+                      <p>
+                      Remember that Health Check notification date is to be <b>24 hours within today</b>. Hence, make sure you change the value of key <b>asof</b> to within 24 hours of today.
+                      </p>
                        <input type="button" class="btn btn-default" data-toggle="collapse"
                        data-target="#viewHealthCheckData" value="View Payload">
                        <div id="viewHealthCheckData" class="collapse">
                            <pre><code>
 {
-   "parameters" : "[{\"type\":\"healthcheck\",\"issues\":\"3\",\"asof\":2015-12-1 21:17:30.802}]",
-   "aps":{
-       "alert": {
-           "body": "You have 7 new Portfolio Health Check(s) on your UBS Advice portfolio ****81 Log into UBS Wealth Management for details.",
-           "title": "Health Check"
-       }
-   }
+   "body": "You have 7 new Portfolio Health Check(s) on your UBS Advice portfolio ****81 Log into UBS Wealth Management for details.",
+   "title": "Health Check"
+}
+
+{
+  "parameters" : "[{\"type\":\"healthcheck\",\"issues\":\"3\",\"asof\":2015-12-1 21:17:30.802}]"
 }
                            </code></pre>
                        </div> <!-- viewHealthCheckData -->
@@ -168,88 +176,84 @@
 
                  </div> <!-- panel body -->
 
-                 <div class="panel-footer clearfix">
-                   <div class="pull-right">
-                       <button class="btn btn-primary" id='send-healthcheck-button'>Send</button>
-                   </div>
                  </div> <!-- panel footer -->
 
 
               </div> <!-- panel -->
           </div> <!-- column 6 -->
+</div> <!-- row -->
 
 
-          <div class="col-md-12">
-            <div class="panel panel-info">
-
-              <div class="panel-heading">
-                <h3 class="panel-title">Send Insight Notification</h3>
-              </div> <!-- heading -->
 
 
-              <div class="panel-body">
+<div class="row">
 
-                <div class="insightContent">
+  <div class="col-md-12">
+      <div class="panel panel-default">
 
-                    <input type="button" class="btn btn-default" data-toggle="collapse"
-                    data-target="#viewInsightData" value="View Payload">
-                    <div id="viewInsightData" class="collapse">
-                        <pre><code>
+        <div class="panel-heading">
+            <h3 class="panel-title">Example Article Payload</h3>
+        </div>
+
+
+        <div class="panel-body">
+                   <div class="dataTypeContent">
+                      <p>
+                      Remember that Article notification date is to be 
+                      <b>14 days within today</b>. Hence, please change the <b>publicationDateTime</b>'s value to reflect this.
+                      </p>
+                       <input type="button" class="btn btn-default" data-toggle="collapse"
+                       data-target="#viewArticleData" value="View Payload">
+                       <div id="viewArticleData" class="collapse">
+                           <pre><code>
 {
-    "parameters" : "[{\"articleId\":\"1186114\",\"articleSource\":\"cio_impact\",\"title\":\"The hunt for yield is on again 1\",\"imageReference\":\"/app/SMP/6/ResearchContentPlatform/getDocumentChartImage.rcp?ChartId=5035334_CHART_1\",\"publicationDateTime\":\"2015-11-25T17:46:34Z\",\"tagsTopics\":[\"Bonds\"],\"authors\":[],\"teaser\":\"Commodities slump continues s\"},{\"articleId\":\"1186115\",\"articleSource\":\"cio_impact\",\"title\":\"The hunt for yield is on again 2\",\"imageReference\":\"/app/SMP/6/ResearchContentPlatform/getDocumentChartImage.rcp?ChartId=5035334_CHART_1\",\"publicationDateTime\":\"2015-11-25T17:46:34Z\",\"tagsTopics\":[\"Bonds\"],\"authors\":[],\"teaser\":\"Commodities slump continues s\"},{\"articleId\":\"1186116\",\"articleSource\":\"cio_impact\",\"title\":\"The hunt for yield is on again 3\",\"imageReference\":\"/app/SMP/6/ResearchContentPlatform/getDocumentChartImage.rcp?ChartId=5035334_CHART_1\",\"publicationDateTime\":\"2015-11-25T17:46:34Z\",\"tagsTopics\":[\"Bonds\"],\"authors\":[],\"teaser\":\"Commodities slump continues s\"},{\"articleId\":\"1186117\",\"articleSource\":\"cio_impact\",\"title\":\"The hunt for yield is on again 4\",\"imageReference\":\"/app/SMP/6/ResearchContentPlatform/getDocumentChartImage.rcp?ChartId=5035334_CHART_1\",\"publicationDateTime\":\"2015-11-25T17:46:34Z\",\"tagsTopics\":[\"Bonds\"],\"authors\":[],\"teaser\":\"Commodities slump continues s\"}]",
-    "aps":{
-        "alert": {
-            "body": "You have 10 new article. Please login to EWM for further details.",
+    "body": "You have 10 new article. Please login to EWM for further details.",
             "title": "Insights"
-        }
-    }
 }
-                        </code></pre>
-                    </div> <!-- viewInsightData -->
-                </div> <!-- insightContent -->
-              </div> <!-- panel-body-->
 
-                <div class="panel-footer clearfix">
-                  <div class="pull-right">
-                      <button class="btn btn-primary" id='send-insight-button'>Send</button>
-                  </div>
-                </div> <!-- panel footer -->
+{
+  "parameters" : "[{\"articleId\":\"1186114\",\"articleSource\":\"cio_impact\",\"title\":\"The hunt for yield is on again 1\",\"imageReference\":\"/app/SMP/6/ResearchContentPlatform/getDocumentChartImage.rcp?ChartId=5035334_CHART_1\",\"publicationDateTime\":\"2015-11-25T17:46:34Z\",\"tagsTopics\":[\"Bonds\"],\"authors\":[],\"teaser\":\"Commodities slump continues s\"}]"
+}
+                           </code></pre>
+                       </div> <!-- viewHealthCheckData -->
+                   </div> <!-- healthCheckContent -->
 
+                 </div> <!-- panel body -->
+      </div>
+  </div>
+</div> <!-- row -->
+
+
+
+
+
+  <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-info">
+
+          <div class="panel-heading">
+              <h3 class="panel-title">Device Configuration</h3>
+          </div> <!-- heading -->
+
+          <div class="panel-body">
+              <div class="col-md-6">
+                <label for="basic-url">Device ID List</label>
+                <div id="device-id-list"></div>
               </div>
-            </div> <!-- column 6-->
 
+              <div class="col-md-6">
+                  <label for="basic-url">Insert Device ID</label>
+                  <div class="input-group">
+                    <input id="input-new-deviceid" type="text" placeholder="1a2b3c4d xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx"
+                    class="form-control" id="basic-url" aria-describedby="basic-addon3">
 
-            <div class="col-md-12">
-              <div class="panel panel-info">
+                    <button class="btn btn-primary" id='insert-newdeviceid-button'>Insert</button>
+                  </div>
+              </div>
+          </div>
+      </div> <!-- column -->
+  </div> <!-- row -->
 
-                <div class="panel-heading">
-                    <h3 class="panel-title">Device Configuration</h3>
-                </div> <!-- heading -->
-
-                <div class="panel-body">
-                    <div class="col-md-6">
-                      <label for="basic-url">Device ID List</label>
-                      <div id="device-id-list"></div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label for="basic-url">Insert Device ID</label>
-                        <div class="input-group">
-                          <input id="input-new-deviceid" type="text" placeholder="1a2b3c4d xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx"
-                          class="form-control" id="basic-url" aria-describedby="basic-addon3">
-
-                          <button class="btn btn-primary" id='insert-newdeviceid-button'>Insert</button>
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div> <!-- column -->
-
-
-          </div> <!-- row -->
       </div> <!-- container -->
 
 </body>

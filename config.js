@@ -45,7 +45,7 @@ module.exports = {
     },
 
     setNotificationPayload                     : (payloadDict) => {
-        notification.payload = payLoadDict;
+        notification.payload = payloadDict;
     },
 
     setNotificationCategory                     : (categoryString) => {

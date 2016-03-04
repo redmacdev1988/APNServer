@@ -15,6 +15,7 @@ require('./POST_getSelectedDeviceID')(router);
 require('./POST_changeDeviceDescription')(router); 
 require('./POST_sendHealthCheckNotification')(router); 
 require('./POST_newDeviceID')(router); 
+require('./POST_sendCustomNotification')(router); 
 
 /*
 require('./POST_init')(router);  			//when a page is loaded, we find the next event to display

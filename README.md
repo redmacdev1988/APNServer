@@ -1,15 +1,20 @@
 # APN server
 
 If you would like to test out Apple Notifications with your iOS apps,
-find yours device's UDID <a href="http://whatsmyudid.com/">here</a>
+please read these comprehensive guides I wrote when I was trying to figure everything out:
+<ul>
+<li><a href="http://shanghaiseagull.com/index.php/2015/12/13/how-to-use-apn-notification-center/">APN notification center</a></li>
+<li><a href="http://shanghaiseagull.com/index.php/2015/12/07/ios-apple-push-notification-server-side-using-node-apn/">server side</a></li>
+<li><a href="http://shanghaiseagull.com/index.php/2015/12/03/ios-apple-push-notification-with-node-js-using-apnagent/">client side</a></li>
+</ul>
 
-With the UDID, you will get:
-<b> A) an .ipa file, which you will then install onto your phone. </b>
+Once you have your provisioning files in place, your .pem files, and all the resources set, you can finally proceed to:
 
-connect your iPhone to your Macintosh or Windows machine.
-launch iTunes.
-drag your .ipa file into your iTunes library.
-Sync
+<ol>
+<li>run your server</li>
+<li>run your iOS client to get a device ID</li>
+<li>insert device ID into your server, and start sending notifications</li>
+</ol>
 
 <b> Run your iOS client app in order to get a device ID: </b>
 <a href="http://shanghaiseagull.com/index.php/2015/12/03/ios-apple-push-notification-ios-client-explanation/">iOS client</a>

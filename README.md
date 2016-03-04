@@ -11,7 +11,8 @@ launch iTunes.
 drag your .ipa file into your iTunes library.
 Sync
 
-<b> B) a device id. </b>
+<b> Run your iOS client app in order to get a device ID: </b>
+<a href="http://shanghaiseagull.com/index.php/2015/12/03/ios-apple-push-notification-ios-client-explanation/">iOS client</a>
 
 go to <a href="www.rickytsao.com/8888">www.rickytsao.com/8888</a>
 

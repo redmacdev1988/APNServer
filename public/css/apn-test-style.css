@@ -1,0 +1,54 @@
+
+body {
+
+}
+
+/*
+#customPayloadTextArea {
+  width: 100%;
+  min-height: 200px;
+  outline: none;
+  resize: none;
+}
+*/
+
+#customPayloadTextArea,
+#customAlertTextArea {
+
+  width: 100%;
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+.input-group {
+  width: 100%;
+}
+
+#device-id-list {
+  //background-color: orange;
+}
+
+#device-id-list .delete {
+  float: right;
+}
+
+#device-id-list ul li input {
+    float: left;
+    margin-right: 20px;
+}
+
+#device-id-list ul li label {
+    width: 80%;
+}
+
+.device-id-label {
+
+    width: 90%;
+    float:left;
+}
+
+#insert-newdeviceid-button {
+    float: right;
+    margin-top: 10px;
+}
